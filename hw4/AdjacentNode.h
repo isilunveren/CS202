@@ -1,22 +1,21 @@
-//
-//  AdjacentNode.h
-//  202hw4
-//
-//  Created by IŞIL ÜNVEREN on 14.05.2025.
-//
-#ifndef AdjacentNode_h
-#define AdjacentNode_h
-#include "Node.h"
-#include <string>
+/*
+* Author : Isil Unveren
+* ID: 22202444
+* Section : 2
+* Homework : 4
+*/
+
+#ifndef ADJACENT_NODE_H
+#define ADJACENT_NODE_H
+class Node;
+
 class AdjacentNode {
 public:
     double edgeWeight;
-    Node* nodeAdj;
+    Node* nodePtr;
     AdjacentNode* next;
-    AdjacentNode(){
-        edgeWeight = 0.0;
-        nodeAdj = nullptr;
-        next = nullptr;
-    }
+    
+    AdjacentNode(Node* node, double weight);
 };
-#endif
+
+#endif 

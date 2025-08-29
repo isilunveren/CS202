@@ -1,32 +1,33 @@
-//
-//  Node.h
-//  202hw4
-//
-//  Created by IŞIL ÜNVEREN on 14.05.2025.
-//
+/*
+* Author : Isil Unveren
+* ID: 22202444
+* Section : 2
+* Homework : 4
+*/
+
 #ifndef NODE_H
 #define NODE_H
 #include <string>
-#include "AdjacentList.h"
 using namespace std;
+class AdjacentList;
+
 class Node {
 public:
-    string color;
     string name;
-    
+    string type;
+    bool isInfected;
+    double securityPatchTime;
+    int malwareTime;
+    bool visited;
+    Node* parent;
+    int nodeID;
     AdjacentList* adjacents;
 
-    Node(const string& status, const string& aName)
-      : color(status), name(aName), adjacents(new AdjacentList())
-    {}
-
-    void addAdjacent(Node* adjNode, double weight) {
-        adjacents->insert(adjNode, weight);
-    }
-
-    ~Node() {
-        delete adjacents;
-    }
+    Node(const string& nodeName, const string& nodeType);
+    ~Node();
+    
+    void addAdjacent(Node* adjNode, double weight);
+    void removeAdjacent(Node* nodeToRemove);
 };
 
 #endif
